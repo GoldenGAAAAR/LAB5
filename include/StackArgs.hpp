@@ -74,4 +74,4 @@ class StackArgs
 };
 
 
-#endif  // INCLUDE_STACKARGS_HPP
+#endif  // INCLUDE_STACKARGS_HPP_
