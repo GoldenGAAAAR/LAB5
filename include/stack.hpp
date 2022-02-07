@@ -4,6 +4,7 @@
 #define INCLUDE_STACK_HPP_
 #include <iostream>
 #include <exception>
+#include <utility>
 
 template <typename T>
 class Stack {
