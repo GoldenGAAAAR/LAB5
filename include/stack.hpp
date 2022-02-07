@@ -1,10 +1,9 @@
 // Copyright 2021 Pavel Toshchakov
 
-#ifndef INCLUDE_EXAMPLE_HPP_
-#define INCLUDE_EXAMPLE_HPP_
+#ifndef INCLUDE_STACK_HPP_
+#define INCLUDE_STACK_HPP_
 #include <iostream>
 #include <exception>
-#include <utility>
 
 template <typename T>
 class Stack {
@@ -14,7 +13,7 @@ class Stack {
     Node* next; // указатель на следующий элемент стека
   };
 
-  Stack() : top(nullptr){};
+  Stack() : top(nullptr){}
   Stack(Stack &&stack):top(stack.top){stack.top = nullptr;}
 
   Stack& operator=(Stack&& stack){
@@ -69,4 +68,4 @@ class Stack {
 };
 
 
-#endif // INCLUDE_EXAMPLE_HPP_
+#endif // INCLUDE_STACK_HPP_

@@ -1,13 +1,10 @@
-//
-// Created by Pavel Toshchakov on 07.02.2022.
-//
+//Copyright 2021 Pavel Toshchakov
 
-#ifndef TEMPLATE_STACKARGS_HPP
-#define TEMPLATE_STACKARGS_HPP
+#ifndef INCLUDE_STACKARGS_HPP_
+#define INCLUDE_STACKARGS_HPP_
 
 #include <iostream>
 #include <exception>
-#include <utility>
 
 template <typename T>
 class StackArgs
@@ -18,7 +15,7 @@ class StackArgs
     Node* next;
   };
 
-  StackArgs() : top(nullptr){};
+  StackArgs() : top(nullptr){}
   StackArgs(StackArgs&& stack) : top(stack.top) { stack.top = nullptr;}
 
   ~StackArgs(){
