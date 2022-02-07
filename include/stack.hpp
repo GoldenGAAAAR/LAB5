@@ -3,6 +3,8 @@
 #ifndef INCLUDE_EXAMPLE_HPP_
 #define INCLUDE_EXAMPLE_HPP_
 #include <iostream>
+#include <exception>
+#include <utility>
 
 template <typename T>
 class Stack {
@@ -47,7 +49,7 @@ class Stack {
 
   void pop(){
     if (!top){
-      throw std::out_of_range("Stack is empty");
+      throw std::exception();
     } else {
       Node* tmp = top;
       top = top->next;
@@ -57,7 +59,7 @@ class Stack {
 
   const T& head() const{
     if (!top){
-      throw std::out_of_range("Stack is empty");
+      throw std::exception();
     }
     return top->data;
   }

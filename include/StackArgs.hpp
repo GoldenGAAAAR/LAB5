@@ -4,7 +4,10 @@
 
 #ifndef TEMPLATE_STACKARGS_HPP
 #define TEMPLATE_STACKARGS_HPP
+
 #include <iostream>
+#include <exception>
+#include <utility>
 
 template <typename T>
 class StackArgs
@@ -45,24 +48,24 @@ class StackArgs
   }
 
   void push(T&& value){
-    Node* new_node = new Node{std::move<T>(value), top};
+    Node* new_node = new Node{std::forward<T>(value), top};
     top = new_node;
   }
 
   const T& head() const {
     if (!top){
-      throw std::out_of_range("Stack is empty");
+      throw std::exception();
     }
     return top->data;
   }
 
   T pop() {
     if (!top) {
-      throw std::out_of_range("Stack is empty");
+      throw std::exception();
     } else {
       T data = top->data;
       Node* temp = top;
-      top = top->Next;
+      top = top->next;
       delete temp;
       return data;
     }
